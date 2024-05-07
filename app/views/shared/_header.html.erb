@@ -1,0 +1,15 @@
+<div class="d-flex flex-column flex-md-row align-items-center 
+p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">FilmTracker</h5>
+  <nav class="my-2 my-md-0 mx-auto">
+    <span class="p-2 text-dark"><%= link_to "Home", root_path %></span>
+    <span class="p-2 text-dark"><%= link_to "All Films", films_path %></span>
+    <span class="p-2 text-dark"><%= link_to "Create Film", new_film_path %></span> 
+  </nav>
+      <% if user_signed_in? %>
+      <div class="email-display">
+        <span class="p-2 text-dark"><%= current_user.email %></span>
+      </div>
+    <% end %>
+        <span class="p-2 text-dark"><%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %></span>
+</div>

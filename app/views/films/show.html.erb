@@ -1,0 +1,25 @@
+<h1><%= @film.title %></h1>
+
+<p><strong>Director:</strong> <%= @film.director %></p>
+<p><strong>Duration:</strong> <%= @film.duration %> minutes</p>
+<p><strong>Year:</strong> <%= @film.year %></p>
+<p><strong>Genre:</strong> <%= @film.genre %></p>
+<p><strong>Description:</strong> <%= @film.description %></p>
+
+<div class="actions">
+  <%= button_to "Delete Film", film_path(@film), method: :delete, class: "delete-btn" %> |
+  <%= link_to "Edit Film", edit_film_path(@film) %> |
+  <%= link_to "Add a Comment", new_film_comment_path(@film) %>|
+  <%= link_to "Back to All Films", films_path %>
+</div>
+
+<h4>Comments:</h4>
+<% @film.comments.each do |comment| %>
+  <div>
+    <p><%= comment.text %></p>
+    <div class="actions">
+    <%= button_to "Delete comment", [comment.film, comment], method: :delete, class: "delete-btn" %> |
+    <%= link_to "Edit", edit_film_comment_path(@film, comment) %> 
+    </div>
+  </div>
+<% end %>

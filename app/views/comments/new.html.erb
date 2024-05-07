@@ -1,0 +1,10 @@
+<h2>New Comment</h2>
+
+<%= form_with(model: [@film, @comment]) do |form| %>
+  <div class="form-group">
+    <%= form.label :text %>
+    <%= form.text_area :text, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Create Comment", class: "btn btn-primary" %>
+<% end %>

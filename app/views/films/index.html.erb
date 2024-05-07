@@ -1,0 +1,17 @@
+<h1>All Films</h1>
+
+<div class="row">
+  <% @films.each do |film| %>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><%= film.title %></h5>
+          <p class="card-text"><strong>Director:</strong> <%= film.director %></p>
+          <p class="card-text"><strong>Year:</strong> <%= film.year %></p>
+          <p class="card-text"><strong>Genre:</strong> <%= film.genre %></p>
+          <%= link_to "Detail", film_path(film), class: "btn btn-sm btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
