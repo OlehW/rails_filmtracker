@@ -5,7 +5,6 @@
     <%= label_tag :search_query %>
     <%= text_field_tag :search_query, params[:search_query] %>
   </div>
-
   <%= submit_tag 'Search' %>
 <% end %>
 <% if @search_results.present? %>

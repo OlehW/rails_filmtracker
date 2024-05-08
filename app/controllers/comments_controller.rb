@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     def create
       @comment = @film.comments.build(comment_params)
       if @comment.save
-        redirect_to @film, notice: 'Comment was successfully created.'
+        redirect_to @film
       else
         render :new
       end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     def update
       @comment = @film.comments.find(params[:id])
       if @comment.update(comment_params)
-        redirect_to @film, notice: 'Comment was successfully updated.'
+        redirect_to @film
       else
         render :edit
       end
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
     def destroy
       @comment = @film.comments.find(params[:id])
       @comment.destroy
-      redirect_to @film, notice: 'Comment was successfully destroyed.'
+      redirect_to @film
     end
   
     private

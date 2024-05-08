@@ -15,7 +15,7 @@ class FilmsController < ApplicationController
   def create
     @film = Film.new(film_params)
     if @film.save
-      redirect_to @film, notice: 'Film was successfully created.'
+      redirect_to @film
     else
       render :new
     end
@@ -32,7 +32,7 @@ class FilmsController < ApplicationController
   def update
     @film = Film.find(params[:id])
     if @film.update(film_params)
-      redirect_to @film, notice: 'Film was successfully updated.'
+      redirect_to @film
     else
       render :edit
     end
