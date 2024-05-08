@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :comments
     collection do
       get :omdb_search
-      post :omdb_import
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -12,14 +12,22 @@
   <table>
     <thead>
     <th>Name</th>
+    <th>Director</th>
+    <th>Duration</th>
+    <th>Genre</th>
+    <th>Description</th>
     <th>Year</th>
     <th>Image</th>
     </thead>
     <tbody>
     <% @search_results.each do |film| %>
       <tr>
-        <td><%= film['Title'] %></td>
-        <td><%= film['Year'] %></td>
+      <td><%= film['Title'] %></td>
+      <td><%= film['Director'] %></td>
+      <td><%= film['Duration'] %></td>
+      <td><%= film['Genre'] %></td>
+      <td><%= film['Description'] %></td>
+      <td><%= film['Year'] %></td>
         <td>
           <% begin %>
             <%= image_tag(film['Poster']) %>
