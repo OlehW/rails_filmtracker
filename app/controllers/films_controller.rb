@@ -7,6 +7,11 @@ class FilmsController < ApplicationController
       @film = Film.new
     end
   
+    def show
+      @omdb = OmdbService.new
+      @omdb_film = @omdb.find_by_title(@film.name)
+    end
+
     def create
       @film = Film.new(film_params)
       if @film.save
@@ -37,6 +42,16 @@ class FilmsController < ApplicationController
       @film = Film.find(params[:id])
       @film.destroy
       redirect_to films_path
+    end
+
+    def omdb_search
+      if params[:search_query].present?
+        @omdb = OmdbService.new
+
+        
+        res = @omdb.search(params[:search_query])
+        @search_results = res['Search']
+      end
     end
   
     private

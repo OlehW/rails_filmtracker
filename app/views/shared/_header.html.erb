@@ -4,7 +4,8 @@ p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <nav class="my-2 my-md-0 mx-auto">
     <span class="p-2 text-dark"><%= link_to "Home", root_path %></span>
     <span class="p-2 text-dark"><%= link_to "All Films", films_path %></span>
-    <span class="p-2 text-dark"><%= link_to "Create Film", new_film_path %></span> 
+    <span class="p-2 text-dark"><%= link_to "Create Film", new_film_path %></span>
+    <span class="p-2 text-dark"><%= link_to 'omdb_Search', omdb_search_films_path %></span> 
   </nav>
       <% if user_signed_in? %>
       <div class="email-display">

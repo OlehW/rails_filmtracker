@@ -17,6 +17,9 @@ gem 'pico-rails', '~> 1.5', '>= 1.5.3'
 # Use sqlite3 as the database for Active Record
 gem "pg", "~> 1.5.6"
 
+# faraday gem
+gem "faraday"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
